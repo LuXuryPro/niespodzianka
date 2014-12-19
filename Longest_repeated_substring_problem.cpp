@@ -16,10 +16,10 @@ int main(int argc, char**argv)
     int longest_pos = 0;
     for (int i = 0; i < seq.size(); ++i)
     {
-        for (int j = 1; j <seq.size()/2 + 1; ++j)
+        for (int j = 1; j <= (seq.size()-i)/2; ++j)
         {
             std::string subseq = seq.substr(i, j);
-            if (seq.find(subseq, i + subseq.size()) != std::string::npos)
+            if (seq.find(subseq, i + j) != std::string::npos)
             {
                 if (j > longest_len)
                 {
